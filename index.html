@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Auth-Google</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script src="https://accounts.google.com/gsi/client" async defer></script>
+	<script src="https://www.google.com/recaptcha/api.js?render=6LfCHdcUAAAAAOwkHsW_7W7MfoOrvoIw9CXdLRBA"></script>
+	<style>
+		:root {
+			--default-font-size: 16pt;
+			--default-margin-padding-size: 0;
+			--default-background-color: #F0FFFFFF;
+			--default-text-color: #000000FF;
+			--color-preset-red: #FF0000FF;
+			--color-preset-yellow: #FFa000FF;
+			--color-preset-green: #008000FF;
+		}
+		:root[theme=dark] {
+			--default-background-color: #000000FF;
+			--default-text-color: #F00000FF;
+		}
+		html, body {
+			margin: var(--default-margin-padding-size);
+			padding: var(--default-margin-padding-size);
+			background-color: var(--default-background-color);
+			color: var(--default-text-color);
+			font-size: var(--default-font-size);
+		}
+		body {
+			margin: 0 auto;
+			width: 90%;
+			text-align: center;
+			padding-bottom: 100px;
+		}
+		@keyframes rotate1 {
+			0% { transform: rotate(0deg); }
+			100% { transform: rotate(360deg); }
+		}
+	</style>
+	<script>
+		window.addEventListener('DOMContentLoaded', (e)=>{
+			const html_top = document.createElement('a');
+			html_top.name='_';
+			document.querySelector('body').prepend(html_top);
+		}, false);
+		window.addEventListener('DOMContentLoaded', (e)=>{
+			let favicon;
+			['icon', 'apple-touch-icon', 'favicon'].forEach((e)=>{
+				favicon = document.createElement('link');
+				favicon.rel = `${e}`;
+				favicon.href = 'https://www.google.com/s2/favicons?size=64&domain=https://google.com/';
+				document.querySelectorAll('head').forEach((e)=>e.prepend(favicon));
+			});
+		}, false);
+		window.addEventListener('DOMContentLoaded', (e)=>{
+			let header1 = document.createElement('h1');
+			let header1_link = document.createElement('a');
+			header1_link.href = './';
+			header1_link.setAttribute('onclick', 'sessionStorage.clear();localStorage.clear();')
+			header1_link.title = document.title;
+			let header1_text = document.createTextNode(document.title);
+			header1_link.appendChild(header1_text);
+			header1.appendChild(header1_link);
+			document.querySelectorAll('body').forEach((e)=>e.prepend(header1));
+		}, false);
+	</script>
+	<script>
+		async function sha256(text){
+			/**
+			* @quote
+				https://qiita.com/economist/items/768d2f6a10d54d4fa39f
+			* @usage
+				sha256(document.querySelector(':root').innerHTML).then(hash => console.log(hash));
+			*/
+			const uint8  = new TextEncoder().encode(text)
+			const digest = await crypto.subtle.digest('SHA-256', uint8)
+			return Array.from(new Uint8Array(digest)).map(v => v.toString(16).padStart(2,'0')).join('')
+		}
+		async function hash_encode(encode, text){
+			/**
+			* @docs
+				https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest
+			* @args encode::text
+				- SHA-1
+				- SHA-256
+				- SHA-384
+				- SHA-512
+			* @args text::text
+				.*
+			*/
+			const uint8  = new TextEncoder().encode(text)
+			const digest = await crypto.subtle.digest(encode, uint8)
+			return Array.from(new Uint8Array(digest)).map(v => v.toString(16).padStart(2,'0')).join('')
+		}
+	</script>
+</head>
+<body>
+	<div class="g_id_signin"
+	data-type="standard"
+	data-shape="rectangular"
+	data-theme="outline"
+	data-text="signin_with_google"
+	data-size="large"
+	data-logo_alignment="left"
+	></div>
+	<div id="g_id_onload"
+	data-client_id="784669840257-i0a06p3o6g8k0k1tk26jj09li1q2acud.apps.googleusercontent.com"
+	data-context="signin"
+	data-callback="onSignIn"
+	data-ux_mode="popup"
+	data-auto_select="true"
+	data-itp_support="true"
+	></div>
+</body>
