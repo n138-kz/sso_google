@@ -88,7 +88,7 @@
 	data-auto_prompt="false"
 	></div>
 	<div style="text-align: left;">
-		<code id="result01"></code>
+		<input readonly type="text" id="result01" onclick="this.select();">
 	</div>
 	<script>
 		document.querySelector('#g_id_onload').dataset.login_uri = location.href;
@@ -97,7 +97,7 @@
 	<script>
 		function onlogin(googleUser) {
 			console.log(googleUser);
-			document.querySelector('#result01').innerText=`jwt token: ${googleUser.credential}`;
+			document.querySelector('#result01').value=`jwt token: ${googleUser.credential}`;
 		}
 	</script>
 </body>
