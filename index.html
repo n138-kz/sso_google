@@ -98,6 +98,10 @@
 		function onlogin(googleUser) {
 			console.log(googleUser);
 			document.querySelector('#result01').value=`jwt token: ${googleUser.credential}`;
+			localStorage.setItem( '_' + '.'+'googleauthn', JSON.stringify(token) );
+			localStorage.setItem( '_' + '.'+'authn', JSON.stringify(token) );
+			localStorage.setItem( (btoa(location.href)).slice(0, 16) + '.'+'googleauthn', JSON.stringify(token) );
+			sessionStorage.setItem( (btoa(location.href)).slice(0, 16) + '.'+'googleauthn', JSON.stringify(token) );
 		}
 	</script>
 </body>
