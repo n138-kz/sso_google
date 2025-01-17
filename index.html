@@ -112,12 +112,15 @@
 	data-logo_alignment="left"
 	></div>
 	<div id="g_id_onload"
-	data-client_id="784669840257-i0a06p3o6g8k0k1tk26jj09li1q2acud.apps.googleusercontent.com"
 	data-context="signin"
-	data-callback="onSignIn"
 	data-ux_mode="popup"
 	data-auto_select="true"
 	data-itp_support="true"
 	data-callback="onlogin"
+	data-auto_prompt="false"
 	></div>
+	<script>
+		document.querySelector('#g_id_onload').dataset.login_uri = location.href;
+		document.querySelector('#g_id_onload').dataset.client_id = '784669840257-i0a06p3o6g8k0k1tk26jj09li1q2acud.apps.googleusercontent.com';
+	</script>
 </body>
