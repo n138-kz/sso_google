@@ -96,11 +96,6 @@
 			return Array.from(new Uint8Array(digest)).map(v => v.toString(16).padStart(2,'0')).join('')
 		}
 	</script>
-	<script>
-		function onlogin(params) {
-			console.log(params);
-		}
-	</script>
 </head>
 <body>
 	<div class="g_id_signin"
@@ -119,8 +114,17 @@
 	data-callback="onlogin"
 	data-auto_prompt="false"
 	></div>
+	<div>
+		<code id="result01"></code>
+	</div>
 	<script>
 		document.querySelector('#g_id_onload').dataset.login_uri = location.href;
 		document.querySelector('#g_id_onload').dataset.client_id = '784669840257-i0a06p3o6g8k0k1tk26jj09li1q2acud.apps.googleusercontent.com';
+	</script>
+	<script>
+		function onlogin(params) {
+			console.log(params);
+			document.querySelector('#result01').innerText=params;
+		}
 	</script>
 </body>
