@@ -96,7 +96,7 @@
 	</script>
 	<script>
 		function onlogin(googleUser) {
-			googleUser['recv_iat']=Math.trunc(new Date().getTime()/10**3);
+			googleUser['recv_time']=Math.trunc(new Date().getTime()/10**3);
 			console.log(googleUser);
 			document.querySelector('#result01').value=googleUser.credential;
 			localStorage.setItem( '_' + '.'+'googleauthn', JSON.stringify(googleUser) );
