@@ -1,4 +1,4 @@
-# [DEFAULT REPOS](https://github.com/n138-kz/sso_google)
+# [sso_google](https://github.com/n138-kz/sso_google)
 
 ## Activity
 
