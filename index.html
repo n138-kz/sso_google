@@ -90,7 +90,7 @@
 		document.querySelector('#g_id_onload').dataset.client_id = '784669840257-i0a06p3o6g8k0k1tk26jj09li1q2acud.apps.googleusercontent.com';
 	</script>
 	<script>
-		function onlogin(googleUser) {
+		async function onlogin(googleUser) {
 			googleUser['recv_time']=Math.trunc(new Date().getTime()/10**3);
 			console.log(googleUser);
 			document.querySelector('#result01').value=googleUser.credential;
@@ -98,6 +98,20 @@
 			localStorage.setItem( '_' + '.'+'authn', JSON.stringify(googleUser) );
 			localStorage.setItem( (btoa(location.href)).slice(0, 16) + '.'+'googleauthn', JSON.stringify(googleUser) );
 			sessionStorage.setItem( (btoa(location.href)).slice(0, 16) + '.'+'googleauthn', JSON.stringify(googleUser) );
+
+			const url_apiserver = 'https://api.n138.jp/sso_google/server/';
+			const myHeaders = new Headers();
+			myHeaders.append('x-token', googleUser.credential);
+			try {
+				const response = await fetch(url_apiserver, {headers: myHeaders,});
+				if (!response.ok) {
+					throw new Error(`レスポンスステータス: ${response.status}`);
+				}
+				const json = await response.json();
+				console.log(json);
+			} catch (error) {
+				console.error(error.message);
+			}
 		}
 	</script>
 </body>
