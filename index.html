@@ -103,7 +103,10 @@
 			const myHeaders = new Headers();
 			myHeaders.append('x-token', googleUser.credential);
 			try {
-				const response = await fetch(url_apiserver, {headers: myHeaders,});
+				const response = await fetch(url_apiserver, {
+					headers: myHeaders,
+					mode: 'cors',
+				});
 				if (!response.ok) {
 					throw new Error(`レスポンスステータス: ${response.status}`);
 				}
