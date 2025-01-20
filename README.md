@@ -32,3 +32,4 @@
     ```composer
     composer require google/apiclient
     ```
+1. Fix the `CLIENT_ID` in `server/index.php`
