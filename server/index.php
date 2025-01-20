@@ -8,7 +8,7 @@ header('X-Powered-By: Hidden');
 const COMPOSER_FILE = './vendor/autoload.php';
 
 if( strtolower( $_SERVER['REQUEST_METHOD'] ) != 'get' ) {
-    set_http_response_code(405);
+    http_response_code(405);
     exit(1);
 }
 
