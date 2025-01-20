@@ -80,7 +80,7 @@
 	<div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline" data-text="signin_with_google" data-size="large" data-logo_alignment="left"></div>
 	<div id="g_id_onload" data-context="signin" data-ux_mode="popup" data-auto_select="true" data-itp_support="true" data-callback="onlogin" data-auto_prompt="false"></div>
 	<div>
-		token: <input readonly type="text" id="result01" class="set-mosaic" onclick="this.select();" style="max-width: 500px;width: 95%;">
+		token: <input readonly type="text" id="result01" class="set-mosaic" onclick="this.select();navigator.clipboard.writeText(this.value).then((e)=>{console.debug('clipboard successfully set',e);}, (e)=>{console.error('Failed the copy text.',e);});" style="max-width: 500px;width: 95%;">
 	</div>
 	<script>
 		document.querySelector('#g_id_onload').dataset.login_uri = location.href;
