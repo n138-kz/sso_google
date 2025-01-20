@@ -39,6 +39,14 @@
 			50% { transform: rotate(240deg); }
 			100% { transform: rotate(360deg); }
 		}
+		.set-mosaic {
+			-ms-filter: blur(5px);
+			filter: blur(5px);
+		}
+		.set-mosaic:active {
+			-ms-filter: blur(0px);
+			filter: blur(0px);
+		}
 	</style>
 	<script>
 		window.addEventListener('DOMContentLoaded', (e)=>{
@@ -72,7 +80,7 @@
 	<div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline" data-text="signin_with_google" data-size="large" data-logo_alignment="left"></div>
 	<div id="g_id_onload" data-context="signin" data-ux_mode="popup" data-auto_select="true" data-itp_support="true" data-callback="onlogin" data-auto_prompt="false"></div>
 	<div>
-		token: <input readonly type="text" id="result01" onclick="this.select();" style="max-width: 500px;width: 95%;">
+		token: <input readonly type="text" id="result01" class="set-mosaic" onclick="this.select();" style="max-width: 500px;width: 95%;">
 	</div>
 	<script>
 		document.querySelector('#g_id_onload').dataset.login_uri = location.href;
