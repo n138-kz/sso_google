@@ -12,7 +12,10 @@ if( strtolower( $_SERVER['REQUEST_METHOD'] ) != 'get' ) {
     exit(1);
 }
 
-$headers = apache_request_headers();
+if( ! isset( $_SERVER['HTTP_X_TOKEN'] ) ) {
+    http_response_code(401);
+    exit(1);
+}
 
 require_once(COMPOSER_FILE);
 define('CLIENT_ID', 'xxxxxxxxxx');
