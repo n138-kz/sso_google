@@ -15,3 +15,20 @@
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/n138-kz/sso_google)](/../../pulls)
 [![GitHub language count](https://img.shields.io/github/languages/count/n138-kz/sso_google)](/../../)
 [![GitHub top language](https://img.shields.io/github/languages/top/n138-kz/sso_google)](/../../)
+
+## Setup(memo)
+
+- [client](#client)
+- [server](#server)
+
+### client
+
+1. Download the this repository. Or view https://n138-kz.github.io/sso_google
+
+### server
+
+1. Download the this repository.
+1. Run php-compose install
+    ```composer
+    composer install google/apiclient
+    ```
