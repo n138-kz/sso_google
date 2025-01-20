@@ -11,7 +11,7 @@ header('X-Powered-By: Hidden');
 
 const COMPOSER_FILE = './vendor/autoload.php';
 
-if( strtolower( $_SERVER['REQUEST_METHOD'] ) != 'get' ) {
+if( ! ( substr( strtolower( $_SERVER['REQUEST_METHOD'] ), 0, 6 ) == 'option' || strtolower( $_SERVER['REQUEST_METHOD'] ) == 'get' ) ) {
     http_response_code(405);
     exit(1);
 }
