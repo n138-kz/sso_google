@@ -101,7 +101,7 @@
 
 			const url_apiserver = 'https://api.n138.jp/sso_google/server/';
 			const myHeaders = new Headers();
-			myHeaders.append('x-token', googleUser.credential);
+			myHeaders.append('X-TOKEN', googleUser.credential);
 			try {
 				const response = await fetch(url_apiserver, {
 					headers: myHeaders,
