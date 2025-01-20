@@ -30,5 +30,5 @@
 1. Download the this repository.
 1. Run php-compose install
     ```composer
-    composer install google/apiclient
+    composer require google/apiclient
     ```
