@@ -20,8 +20,8 @@
 
 - [Google公式リファレンス](https://developers.google.com/identity/gsi/web/guides/migration?hl=ja)
 - [Developer Console](https://console.cloud.google.com/apis/credentials?hl=ja&project=upbeat-splicer-325708)
-- [[Private]Auth-via-Google-auth](https://github.com/n138-kz/Auth-via-Google-auth)
-- [[Public]Auth-Google](https://github.com/n138-kz/Auth-Google)
+- [![](https://www.google.com/s2/favicons?size=64&domain=https://github.com/)[Private]Auth-via-Google-auth](https://github.com/n138-kz/Auth-via-Google-auth)
+- [![](https://www.google.com/s2/favicons?size=64&domain=https://github.com/)[Public]Auth-Google](https://github.com/n138-kz/Auth-Google)
 
 ## Setup(memo)
 
