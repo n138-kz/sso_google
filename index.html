@@ -11,46 +11,10 @@
 	<script src="https://www.google.com/recaptcha/api.js?render=6LfCHdcUAAAAAOwkHsW_7W7MfoOrvoIw9CXdLRBA"></script>
 	<style>
 		/* Basic theme */
-		:root {
-			--default-font-size: 16pt;
-			--default-margin-padding-size: 0;
-			--default-background-color: #F0FFFFFF;
-			--default-text-color: #000000FF;
-			--color-preset-red: #FF0000FF;
-			--color-preset-yellow: #FFa000FF;
-			--color-preset-green: #008000FF;
-		}
-		:root[theme=dark] {
-			--default-background-color: #000000FF;
-			--default-text-color: #F00000FF;
-		}
-		html, body {
-			margin: var(--default-margin-padding-size);
-			padding: var(--default-margin-padding-size);
-			background-color: var(--default-background-color);
-			color: var(--default-text-color);
-			font-size: var(--default-font-size);
-		}
 		body {
 			margin: 0 auto;
 			width: 90%;
 			padding-bottom: 100px;
-		}
-		@keyframes rotate1 {
-			0% { transform: rotate(0deg); }
-			50% { transform: rotate(240deg); }
-			100% { transform: rotate(360deg); }
-		}
-		.set-mosaic {
-			-ms-filter: blur(5px);
-			filter: blur(5px);
-		}
-		.set-mosaic:focus, .set-mosaic:hover {
-			-ms-filter: blur(0px);
-			filter: blur(0px);
-		}
-		.set-hidden {
-			display: none;
 		}
 	</style>
 	<script>
