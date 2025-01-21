@@ -19,7 +19,7 @@
 ## Refs
 
 - [Google公式リファレンス](https://developers.google.com/identity/gsi/web/guides/migration?hl=ja)
-- [Google Developer Console](https://console.cloud.google.com/apis/credentials?hl=ja&project=upbeat-splicer-325708)
+- [Developer Console](https://console.cloud.google.com/apis/credentials?hl=ja&project=upbeat-splicer-325708)
 - [[Private]Auth-via-Google-auth](https://github.com/n138-kz/Auth-via-Google-auth)
 - [[Public]Auth-Google](https://github.com/n138-kz/Auth-Google)
 
